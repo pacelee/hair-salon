@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hair Salon</title>
+      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    </head>
+    <body>
+      <nav class="navbar navbar-default navbar-top">
+        <a href="/"><span class="navbar-brand">Hair Salon</span></a>
+        <ul class="nav navbar-nav navbar collapse navbar-collapse">
+          <li>
+            <a href="/stylists">View All Stylists</a>
+          </li>
+          <li>
+            <a href="/stylists/new">Add New Stylist</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+  </html>
