@@ -5,7 +5,22 @@
 
     <ul>
       <% @stylist.clients().each() do |client| %>
-        <li><%= client.name() %> </li>
+        <li><%= client.name() %>
+        <form action="/client_update" method="post">
+          <input name="_method" type="hidden" value="patch">
+          <input id="client_id" name="client_id" type="hidden" value="<%= client.name() %>">
+          <input id="client_mark" name="client_mark" type="hidden" value="<%= client.id() %>">
+
+          <label for="name">Rename this Client:</label>
+          <input id="name" name="name" type="text">
+          <button class="btn btn-success" type="submit">Update</button>
+        </form>
+        <form action="/client" method="post">
+          <input name="_method" type="hidden" value="delete">
+          <input id="client_id" name="client_id" type="hidden" value="<%= client.name() %>">
+          <button class="btn btn-danger" type="submit">Delete <%= client.name() %></button>
+        </form>
+        </li>
       <% end %>
     </ul>
 
