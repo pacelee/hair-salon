@@ -1,3 +1,5 @@
+<div class="container-fluid box">
+
 <h1>Your Current Stylists</h1>
 
   <% if @stylists.any?() %>
@@ -5,7 +7,7 @@
 
     <ul>
       <% @stylists.each() do |stylist| %>
-        <li><a href="/stylists/<%= stylist.id()%>"><%= stylist.name() %></a> </li>
+        <li><a href="/stylists/<%= stylist.id()%>"><p><%= stylist.name() %></p></a> </li>
       <% end %>
     </ul>
 
@@ -14,3 +16,4 @@
       <p>There are no stylists yet!</p>
 
   <% end %>
+</div>
